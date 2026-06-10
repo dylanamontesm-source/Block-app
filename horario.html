@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Configurar horario de bloqueo</title>
+    <link rel="stylesheet" href="horario.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Configurar horario de bloqueo</h1>
+        <p class="lead">Define el horario en el que se bloquearán las aplicaciones seleccionadas.</p>
+
+        <form id="scheduleForm" novalidate>
+            <div class="field">
+                <div class="label">Hora de inicio</div>
+                <div class="time-box"><input type="time" id="inicio" required></div>
+            </div>
+
+            <div class="field">
+                <div class="label">Hora de fin</div>
+                <div class="time-box"><input type="time" id="fin" required></div>
+            </div>
+
+            <div class="field repeat">
+                    <div class="label">Repetir</div>
+                    <div class="days" id="days">
+                        <button type="button" class="day">L</button>
+                        <button type="button" class="day">M</button>
+                        <button type="button" class="day">M</button>
+                        <button type="button" class="day">J</button>
+                        <button type="button" class="day">V</button>
+                        <button type="button" class="day">S</button>
+                        <button type="button" class="day">D</button>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="btnGuardar" class="button" type="button">Guardar horario</button>
+                </div>
+
+                <div id="msg" class="message hidden" aria-live="polite"></div>
+            </form>
+
+            <!-- Modal de confirmación -->
+            <div id="modal" class="modal hidden" aria-hidden="true">
+                <div class="modal-content">
+                    <button id="modalCerrar" class="modal-close">×</button>
+                    <div class="modal-icon">✓</div>
+                    <h2 id="modalTitle">Horario guardado</h2>
+                    <p id="modalTexto"></p>
+                    <div class="modal-actions">
+                        <button id="modalAceptar" class="button">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script src="horario.js"></script>
+</body>
+</html>
